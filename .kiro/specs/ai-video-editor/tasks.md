@@ -114,7 +114,10 @@
   - Add loading states and error handling for transcription process
   - _Requirements: 5.1, 5.2, 5.3, 5.4, 5.5_
 
-- [ ] 9. Connect frontend to backend with API integration
+- [-] 9. Connect frontend to backend with API integration
+
+
+
   - Implement Remix loaders and actions for server communication
   - Create API client functions for media upload and project management
   - Add WebSocket connection for real-time processing updates
