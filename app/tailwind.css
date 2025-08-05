@@ -1,12 +1,106 @@
+/* Import Inter font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Base styles with font smoothing */
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
 html,
 body {
-  @apply bg-white dark:bg-gray-950;
+  @apply bg-gray-900 text-gray-50 font-sans;
+  color-scheme: dark;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden; /* Prevent body scroll for video editor */
+}
 
-  @media (prefers-color-scheme: dark) {
-    color-scheme: dark;
-  }
+#root {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-600 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-500;
+}
+
+/* Focus styles for accessibility */
+*:focus {
+  outline: none;
+}
+
+*:focus-visible {
+  @apply ring-2 ring-blue-400 ring-offset-2 ring-offset-gray-900;
+}
+
+/* Typography classes */
+.text-h1 {
+  @apply text-4xl font-bold text-gray-50;
+}
+
+.text-h2 {
+  @apply text-xl font-semibold text-gray-100;
+}
+
+.text-body {
+  @apply text-base font-normal text-gray-200;
+}
+
+.text-ui {
+  @apply text-sm font-medium text-gray-100;
+}
+
+.text-meta {
+  @apply text-xs font-light text-gray-400;
+}
+
+/* Component utility classes */
+.panel {
+  @apply bg-gray-800 rounded-lg border border-gray-700;
+}
+
+.button-primary {
+  @apply px-4 py-2 rounded-md bg-gradient-to-r from-blue-400 to-purple-500 text-white font-medium transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-900;
+}
+
+.button-secondary {
+  @apply px-4 py-2 rounded-md bg-gray-700 text-gray-100 font-medium hover:bg-gray-600 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:ring-offset-gray-900;
+}
+
+.button-ghost {
+  @apply px-4 py-2 rounded-md text-gray-300 font-medium hover:bg-gray-700 hover:text-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:ring-offset-gray-900;
+}
+
+.input-field {
+  @apply bg-gray-700 border border-gray-600 rounded-md px-3 py-2 text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-colors;
+}
+
+.slider-track {
+  @apply w-full h-2 bg-gray-700 rounded-full;
+}
+
+.slider-thumb {
+  @apply w-4 h-4 bg-gray-400 rounded-full cursor-pointer hover:bg-gray-300 transition-colors;
 }
