@@ -39,14 +39,17 @@ def test_directories():
 def test_database():
     """Test database connection"""
     try:
-        from database import create_tables, SessionLocal
-        from models import User, Project, MediaFile
+        # Add current directory to Python path
+        sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        
+        import database
+        import models
         
         # Create tables
-        create_tables()
+        database.create_tables()
         
         # Test database session
-        db = SessionLocal()
+        db = database.SessionLocal()
         db.close()
         
         print("✓ Database setup successful")

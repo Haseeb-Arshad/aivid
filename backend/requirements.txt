@@ -4,9 +4,9 @@ sqlalchemy==2.0.23
 python-jose[cryptography]==3.3.0
 passlib[bcrypt]==1.7.4
 python-multipart==0.0.6
-pillow==10.1.0
+pillow>=10.0.0
 ffmpeg-python==0.2.0
 pydantic[email]==2.5.0
-openai-whisper==20231117
-torch==2.1.0
-torchaudio==2.1.0
+openai-whisper
+torch
+torchaudio

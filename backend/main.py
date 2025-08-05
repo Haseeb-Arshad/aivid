@@ -2,8 +2,8 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 
-from .database import create_tables
-from .routes import auth, media, projects
+from database import create_tables
+from routes import auth, media, projects, transcription
 
 app = FastAPI(
     title="AI Video Editor API",
@@ -24,6 +24,7 @@ app.add_middleware(
 app.include_router(auth.router)
 app.include_router(media.router)
 app.include_router(projects.router)
+app.include_router(transcription.router)
 
 @app.on_event("startup")
 async def startup_event():
